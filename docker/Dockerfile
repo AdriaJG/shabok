@@ -5,9 +5,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-RUN ls /
+RUN ls 
 
 FROM nginx
 EXPOSE 443
 RUN ls
-COPY --from=builder ./app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
