@@ -5,7 +5,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-RUN ls
+RUN ls dist
 
 FROM nginx
 EXPOSE 443
