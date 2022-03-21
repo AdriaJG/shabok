@@ -1,10 +1,11 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY ./package.json ./
-Run ls
 RUN npm install
 COPY . .
 RUN npm run build
+
+RUN ls /
 
 FROM nginx
 EXPOSE 443
