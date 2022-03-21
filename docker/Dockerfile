@@ -1,9 +1,12 @@
-FROM node:current-slim
-
-WORKDIR /usr/src/app
-COPY . .
+# Stage 1
+FROM node:10-alpine as build-step
+RUN mkdir -p /app
+WORKDIR /app
+COPY package.json /app
 RUN npm install
-RUn ng serve
+COPY . /app
+RUN npm run build --prod
 
-EXPOSE 3001
-CMD [ "npm", "run", "console" ]
+# Stage 2
+FROM nginx:1.17.1-alpine
+COPY --from=build-step /app/docs /usr/share/nginx/html
