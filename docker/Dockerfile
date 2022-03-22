@@ -1,14 +1,11 @@
-FROM node:alpine as builder
-WORKDIR '/app'
-RUN ls
+FROM node:alpine as build
+WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN ./node_modules/.bin/ng build
 
-RUN ls dist
-
-FROM nginx
+FROM nginx:latest
 EXPOSE 8443
-RUN ls
-COPY --from=builder ./dist/shabok /usr/share/nginx/html
+COPY --from=build /app/dist/shabok /usr/share/nginx/html
+#COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
