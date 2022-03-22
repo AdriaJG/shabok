@@ -1,5 +1,6 @@
 FROM node:alpine as builder
 WORKDIR '/app'
+RUN ls
 COPY ./package.json ./
 RUN npm install
 COPY . .
@@ -8,6 +9,6 @@ RUN npm run build
 RUN ls dist
 
 FROM nginx
-EXPOSE 443
+EXPOSE 8443
 RUN ls
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder ./dist/shabok /usr/share/nginx/html
