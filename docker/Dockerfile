@@ -4,6 +4,7 @@ USER root
 COPY ./package.json ./
 RUN npm install
 COPY . .
+RUN npm install -g npm@8.5.5
 RUN ./node_modules/.bin/ng build
 
 FROM ubi8/nginx-118:latest
