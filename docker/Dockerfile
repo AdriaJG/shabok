@@ -13,6 +13,7 @@ EXPOSE 8443:8443
 RUN chmod 775 -R /etc/nginx
 COPY --from=build /app/dist/shabok /usr/share/nginx/html
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+RUN chmod 775 -R /var/cache/nginx/client_temp
 
 EXPOSE 8080
 
