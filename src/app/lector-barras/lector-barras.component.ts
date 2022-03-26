@@ -18,10 +18,13 @@ export class LectorBarrasComponent implements AfterViewInit {
 
   onValueChanges(result: { codeResult: { code: any; }; }) {
     this.barcodeValue = result.codeResult.code;
-    alert("https://openlibrary.org/isbn/"+this.barcodeValue);
   }
 
   onStarted(started: any) {
     console.log(started);
+  }
+  ir(){
+
+    window.location.href="https://openlibrary.org/isbn/" + this.barcodeValue;
   }
 }

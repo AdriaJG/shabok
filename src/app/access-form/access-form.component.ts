@@ -51,6 +51,7 @@ export class AccessFormComponent implements OnInit {
         }
 
         this.loading = true;
+        console.log(this.f);
         this.authenticationService.login(this.f['username'].value, this.f['password'].value)
             .pipe(first())
             .subscribe(
