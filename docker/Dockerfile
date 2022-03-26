@@ -5,7 +5,7 @@ RUN npm install
 COPY . .
 RUN ./node_modules/.bin/ng build
 
-FROM nginx:latest
+FROM ubi8/nginx-118:latest
 USER root
 EXPOSE 8443:8443
 RUN chmod 775 -R /etc/nginx
