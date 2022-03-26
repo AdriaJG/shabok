@@ -11,7 +11,6 @@ RUN chmod 775 -R /etc/nginx
 RUN chmod 775 -R /var/cache/nginx
 COPY --from=build /app/dist/shabok /usr/share/nginx/html
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
     chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
