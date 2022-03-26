@@ -1,6 +1,6 @@
 FROM ubi8/nodejs-16 as build
 WORKDIR /app
-USER ROOT
+USER root
 COPY ./package.json ./
 RUN npm install
 COPY . .
