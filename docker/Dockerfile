@@ -1,4 +1,4 @@
-FROM node:alpine as build
+FROM ubi8/nodejs-16 as build
 WORKDIR /app
 COPY ./package.json ./
 RUN npm install
