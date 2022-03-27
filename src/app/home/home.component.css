@@ -4,6 +4,7 @@
   width:20rem;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 h1{
@@ -54,4 +55,22 @@ h1{
   font-size: 24px;
   font-weight: 400;
   line-height: 29px;
+}
+
+#comps{
+  width:80%;
+  padding:1rem;
+  margin-left: 20rem;
+}
+
+#libros{
+  display:flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+app-libro{
+  margin-top:2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }

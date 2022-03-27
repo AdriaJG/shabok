@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LibroComponent } from './libro/libro.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LibroComponent } from './libro/libro.component';
     AccessFormComponent,
     LoginComponent,
     HomeComponent,
-    LibroComponent
+    LibroComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
