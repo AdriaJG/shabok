@@ -13,13 +13,17 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { LibroComponent } from './libro/libro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LectorBarrasComponent,
     AccessFormComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    LibroComponent
   ],
   imports: [
     BrowserModule,
